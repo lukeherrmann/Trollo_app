@@ -1,0 +1,16 @@
+<div class="ui segment">
+  <h1 class="ui blue inverted center aligned header">User Boards</h1>
+</div>
+<div class="ui segment">
+  <div class="ui relaxed divided list">
+    <div class="item">
+     <div class="content">
+        <% @boards.each do |board|%>
+          <h3><%= link_to board.board_name, board_lists_path(board) %></h3>
+          <%= link_to "Delete", board, method: :delete, class: "ui inverted red button tiny" %>
+          <hr />
+        <% end%>
+      </div>
+    </div>
+  </div>
+</div>
