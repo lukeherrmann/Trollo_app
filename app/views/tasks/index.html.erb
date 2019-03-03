@@ -1,2 +1,16 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<div class="ui segment">
+  <h1 class="ui blue inverted center aligned header"><%= @list.list_name %></h1>
+</div>
+<%= link_to 'Add Task', new_list_task_path %>
+<div class="ui segment">
+  <div class="ui relaxed divided list">
+    <div class="item">
+     <div class="content">
+        <% @list.tasks.each do |task|%>
+          <h3><%= task.task_name %></h3>          
+          <hr />
+        <% end%>
+      </div>
+    </div>
+  </div>
+</div>
